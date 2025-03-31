@@ -1,0 +1,7 @@
+- Explicar o que é Fine-Tuning e processos que são realizados
+- Falar das etapas
+- Falar do Arquivo de treinamento
+- Mostrar documentação
+- Fazer gancho para implementar "validar_json.py na aula 1.4
+- Falar de custos e mostrar [Tokenizer](https://platform.openai.com/tokenizer) 
+- 
