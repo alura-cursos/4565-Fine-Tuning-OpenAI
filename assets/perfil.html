@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfis de Participantes</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffff;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border: 2px solid #00ffff44;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 0 12px #00ffff22;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      border-color: #00ffff;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #00ffff33;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .perfil-nome {
+      color: #00ffff;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .perfil-descricao {
+      font-size: 0.95em;
+      line-height: 1.5em;
+      color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Perfis de Participantes</h1>
+  <div class="grid">
+    <div class="card">
+      <div class="avatar">CI</div>
+      <div class="perfil-nome">Crítico Irônico</div>
+      <div class="perfil-descricao">
+        Participante ativo com tom sarcástico. Costuma criticar obras populares com ironia e raramente interage com outros usuários.
+      </div>
+    </div>
+    <div class="card">
+      <div class="avatar">DR</div>
+      <div class="perfil-nome">Diplomático Reflexivo</div>
+      <div class="perfil-descricao">
+        Comenta com equilíbrio e educação. Avalia prós e contras com respeito e costuma estimular debates construtivos no fórum.
+      </div>
+    </div>
+    <div class="card">
+      <div class="avatar">EA</div>
+      <div class="perfil-nome">Engajado Analítico</div>
+      <div class="perfil-descricao">
+        Traz análises críticas e socioculturais com frequência. Interage com outros usuários e eleva o nível da discussão.
+      </div>
+    </div>
+    <div class="card">
+      <div class="avatar">SC</div>
+      <div class="perfil-nome">Super Contribuidor</div>
+      <div class="perfil-descricao">
+        Figura central do fórum, ajuda, responde e engaja. Estimula a participação saudável e orienta outros participantes.
+      </div>
+    </div>
+    <div class="card">
+      <div class="avatar">OP</div>
+      <div class="perfil-nome">Observador Participativo</div>
+      <div class="perfil-descricao">
+        Participa com moderação, geralmente em tom neutro. Prefere observar e curtir postagens, mas pode ser incentivado a engajar mais.
+      </div>
+    </div>
+    <div class="card">
+      <div class="avatar">CP</div>
+      <div class="perfil-nome">Cinéfilo Pop</div>
+      <div class="perfil-descricao">
+        Apaixonado por blockbusters, heróis e filmes de apelo popular. Costuma comentar com entusiasmo e defender suas obras favoritas.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

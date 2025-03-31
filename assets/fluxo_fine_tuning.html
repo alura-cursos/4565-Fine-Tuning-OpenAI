@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fluxo de Fine-Tuning - OpenAI</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      font-family: 'Segoe UI', sans-serif;
+      color: #00bcd4;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .container {
+      width: 960px;
+      margin: auto;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 20px;
+      justify-items: center;
+    }
+    .swimlane {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-left: 2px solid #00bcd4;
+      padding: 10px;
+    }
+    .swimlane h2 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #00bcd4;
+    }
+    .activity {
+      background-color: rgba(0, 188, 212, 0.05);
+      border: 2px solid #00bcd4;
+      border-radius: 8px;
+      padding: 12px;
+      width: 200px;
+      text-align: center;
+      font-size: 13px;
+      box-shadow: 0 0 8px rgba(0, 188, 212, 0.2);
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .arrow-down {
+      width: 2px;
+      height: 20px;
+      background-color: #00bcd4;
+      position: relative;
+    }
+    .arrow-down::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: -6px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid #00bcd4;
+    }
+    .inferencia {
+      border: 2px dashed #00bcd4;
+      background-color: rgba(0, 188, 212, 0.1);
+      padding: 15px;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      font-style: italic;
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+      margin-top: 30px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fine-Tuning com a API da OpenAI</h1>
+  <div class="container">
+    <div class="swimlane">
+      <h2>Entrada</h2>
+      <div class="activity">Dados/datasets</div>
+      <div class="arrow-down"></div>
+      <div class="activity">Preparar dados - JSONL</div>
+    </div>
+
+    <div class="swimlane">
+      <h2>Processo</h2>
+      <div class="activity">Subir dataset aos servidores da OpenAI</div>
+      <div class="arrow-down"></div>
+      <div class="activity">Criar job de fine-tuning</div>
+      <div class="arrow-down"></div>
+      <div class="activity">Avaliar o Modelo</div>
+      <div class="arrow-down"></div>
+      <div class="activity">Implantar o Modelo</div>
+    </div>
+
+    <div class="swimlane">
+      <h2>Saída</h2>
+      <div class="inferencia">
+        <strong>Camada de inferência</strong><br>
+        Usar o endpoint de completions da OpenAI para o modelo
+      </div>
+    </div>
+  </div>
+</body>
+</html>

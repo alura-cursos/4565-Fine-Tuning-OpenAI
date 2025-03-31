@@ -1,2 +1,27 @@
-# Google App Engine generated folder
-appengine-generated/
+# Ignore o arquivo de variáveis de ambiente
+.env
+
+# Ignore a pasta do ambiente virtual
+venv-fine-tuning/
+
+# Arquivos Python compilados
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info
+dist/
+build/
+
+# Logs e dados temporários
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

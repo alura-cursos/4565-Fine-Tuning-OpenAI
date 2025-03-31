@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórum de Filmes</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #00ffff;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .comentario {
+      display: flex;
+      gap: 16px;
+      background-color: #1a1a1a;
+      border: 1px solid #00ffff;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+
+    .resposta {
+      margin-left: 60px;
+      border-color: #00cccc;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #00ffff33;
+      color: #00ffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .conteudo {
+      flex: 1;
+    }
+
+    .cabecalho {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85em;
+      color: #aaa;
+    }
+
+    .usuario {
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .filme {
+      font-size: 1.1em;
+      color: #ffffff;
+      margin-top: 4px;
+    }
+
+    .categoria {
+      font-size: 0.85em;
+      color: #888;
+    }
+
+    .texto {
+      margin-top: 10px;
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    .menção {
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+    .rodape {
+      margin-top: 10px;
+      font-size: 0.85em;
+      color: #bbb;
+    }
+
+    .rodape span {
+      margin-right: 16px;
+    }
+
+    .like {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Comentários no Fórum 🎬</h2>
+  <div id="forum-container"></div>
+
+  <script>
+    const comentarios = [
+      {
+        user_id: "U003",
+        nome_completo: "Carla Mendes",
+        username: "CarlaM",
+        idade: 42,
+        localizacao: "Belo Horizonte",
+        filme: "CODA",
+        categoria_filme: "Filmes Premiados",
+        comentario: "'CODA' impressiona pela sensibilidade ao tratar temas familiares e sociais.",
+        sentimento: "Positivo",
+        data_hora: "2023-09-01 12:39:00",
+        tipo_interacao: "comentario",
+        usuario_respondido: null,
+        curtiu_thread: "Sim"
+      },
+      {
+        user_id: "U006",
+        nome_completo: "Felipe Souza",
+        username: "FelipeS",
+        idade: 38,
+        localizacao: "Porto Alegre",
+        filme: "CODA",
+        categoria_filme: "Filmes Premiados",
+        comentario: "Para @CarlaM: concordo que CODA é uma obra que toca o coração, especialmente pela sua autenticidade.",
+        sentimento: "Positivo",
+        data_hora: "2023-09-01 13:05:00",
+        tipo_interacao: "resposta_ao",
+        usuario_respondido: "@CarlaM",
+        curtiu_thread: "Sim"
+      }
+    ];
+
+    const container = document.getElementById("forum-container");
+
+    comentarios.forEach(c => {
+      const div = document.createElement("div");
+      div.classList.add("comentario");
+      if (c.tipo_interacao === "resposta_ao") {
+        div.classList.add("resposta");
+      }
+
+      const avatar = document.createElement("div");
+      avatar.classList.add("avatar");
+      avatar.textContent = c.username.slice(0, 2).toUpperCase();
+
+      const content = document.createElement("div");
+      content.classList.add("conteudo");
+
+      content.innerHTML = `
+        <div class="cabecalho">
+          <span class="usuario">@${c.username} • ${c.localizacao}</span>
+          <span>🕒 ${c.data_hora}</span>
+        </div>
+        <div class="filme">${c.filme} <span class="categoria">– ${c.categoria_filme}</span></div>
+        <div class="texto">${formatarTexto(c.comentario)}</div>
+        <div class="rodape">
+          <span>Sentimento: ${c.sentimento}</span>
+          <span class="like">👍 ${c.curtiu_thread === "Sim" ? "Curtiu" : "Não curtiu"}</span>
+        </div>
+      `;
+
+      div.appendChild(avatar);
+      div.appendChild(content);
+      container.appendChild(div);
+    });
+
+    // Detecta e destaca @menções
+    function formatarTexto(texto) {
+      return texto.replace(/@(\w+)/g, '<span class="menção">@$1</span>');
+    }
+  </script>
+</body>
+</html>

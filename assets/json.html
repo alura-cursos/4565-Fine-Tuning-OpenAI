@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador de JSON</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            font-family: 'Segoe UI', sans-serif;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #00bcd4;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .json-container {
+            background-color: #0d1117;
+            border-left: 4px solid #00bcd4;
+            padding: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        .key {
+            color: #00bcd4;
+            font-size: 1.2rem;
+            margin-left: 2rem;
+        }
+
+        .string {
+            color: #ffffff;
+            font-size: 1.2rem;  
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MENSAGENS</h1>
+    <div class="json-container">
+        {
+        <span class="key">"role"</span>: <span class="string">"system"</span>,<br>
+        <span class="key">"content"</span>: <span class="string">"Classifique o perfil do usuário com base no comentário."</span><br>
+        },<br>
+        {
+        <span class="key">"role"</span>: <span class="string">"user"</span>,<br>
+        <span class="key">"content"</span>: <span class="string">"Ah, claro, porque o mundo realmente precisava de mais um filme de herói chorando em câmera lenta."</span><br>
+        },<br>
+        {
+        <span class="key">"role"</span>: <span class="string">"assistant"</span>,<br>
+        <span class="key">"content"</span>: <span class="string">"Crítico Irônico"</span><br>
+        }
+    </div>
+</body>
+
+</html>
